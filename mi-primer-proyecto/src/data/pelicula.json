@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "titulo": "Paprika",
+    "imagen": "https://m.media-amazon.com/images/I/616HmJ7Mc-L._AC_UF894,1000_QL80_.jpg",
+    "descripcion": "En un futuro cercano, un dispositivo llamado DC Mini permite a los terapeutas ingresar a los sueños de sus pacientes. Cuando el aparato es robado, la psicoterapeuta Atsuko Chiba, bajo su alter ego Paprika, deberá sumergirse en un mundo onírico caótico para evitar que la realidad colapse."
+  },
+  {
+    "id": 2,
+    "titulo": "Perfect Blue",
+    "imagen": "https://moviepostermexico.com/cdn/shop/products/3603d39878ce2adc287448e5ab24e5ef_1024x1024@2x.jpg?v=1621609958",
+    "descripcion": "Mima, una joven idol del pop japonés, decide abandonar su carrera musical para convertirse en actriz. Sin embargo, el acoso de un fan obsesionado y una serie de eventos perturbadores comienzan a desdibujar la línea entre la realidad y la paranoia."
+  },
+  {
+    "id": 3,
+    "titulo": "Millennium Actress",
+    "imagen": "https://cdn.posteritati.com/posters/000/000/066/931/millennium-actress-md-web.jpg",
+    "descripcion": "Dos documentalistas entrevistan a Chiyoko Fujiwara, una legendaria actriz retirada. A través de sus recuerdos, se entrelazan escenas de su vida y de sus películas, revelando una historia de amor que atraviesa décadas y géneros cinematográficos."
+  },
+  {
+    "id": 4,
+    "titulo": "Tokyo Godfathers",
+    "imagen": "https://cdn.posteritati.com/posters/000/000/050/328/tokyo-godfathers-md-web.jpg",
+    "descripcion": "En la víspera de Navidad, tres personas sin hogar encuentran a un bebé abandonado entre la basura en Tokio. Decididos a devolverla a sus padres, emprenden un viaje inesperado que los confronta con su pasado y redefine su idea de familia."
+  }
+]

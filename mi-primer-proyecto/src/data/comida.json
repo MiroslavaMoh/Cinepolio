@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "titulo": "Palomitas de Maíz Clásicas",
+    "imagen": "https://images.unsplash.com/photo-1572177191856-3cde618dee1f?q=80&w=1000&auto=format&fit=crop",
+    "descripcion": "El acompañamiento icónico de toda función. Granos de maíz explotados con aire caliente, bañados en mantequilla fundida y una pizca de sal marina para el equilibrio perfecto."
+  },
+  {
+    "id": 2,
+    "titulo": "Nachos con Queso y Jalapeños",
+    "imagen": "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?q=80&w=1000&auto=format&fit=crop",
+    "descripcion": "Crujientes tortillas de maíz bañadas en una suave y caliente salsa de queso cheddar, acompañadas de rodajas de chile jalapeño para quienes buscan un toque picante en su película."
+  },
+  {
+    "id": 3,
+    "titulo": "Hot Dog Premium",
+    "imagen": "https://images.unsplash.com/photo-1612392062631-94dd858cba88?q=80&w=1000&auto=format&fit=crop",
+    "descripcion": "Salchicha de res de alta calidad en pan artesanal al vapor. Personalizable con mostaza, ketchup y cebolla caramelizada, un clásico sustancioso para funciones largas."
+  },
+  {
+    "id": 4,
+    "titulo": "Combo de Dulces Variados",
+    "imagen": "https://images.unsplash.com/photo-1581798459219-318e76aecc7b?q=80&w=1000&auto=format&fit=crop",
+    "descripcion": "Una selección de gomitas frutales, chocolates y caramelos masticables. El toque dulce necesario para contrastar con las palomitas saladas durante el clímax del filme."
+  }
+]

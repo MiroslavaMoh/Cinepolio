@@ -1,6 +1,7 @@
 import MovieCard from "../components/MovieCard";
+import peliculas from "../data/otros.json"
 
-function Otros({cambiarVista}){
+function Otros({ verDetalle }){
     return(
         <main class="grid" style={{
             maxWidth:"1200px",
@@ -9,29 +10,14 @@ function Otros({cambiarVista}){
             gap:"16px",
             padding:"16px"
         }}>
-            <MovieCard
-                title="Funko"
-                image="src\img\funko.jpg"
-                onVerDetalle={() => cambiarVista("detalle")}
-            />
-
-            <MovieCard
-                title="Funko 1"
-                image="src\img\funko.jpg"
-                onVerDetalle={() => cambiarVista("detalle")}
-            />
-
-            <MovieCard
-                title="Funko 3"
-                image="src\img\funko.jpg"
-                onVerDetalle={() => cambiarVista("detalle")}
-            />
-
-            <MovieCard
-                title="Funko 4"
-                image="src\img\funko.jpg"
-                onVerDetalle={() => cambiarVista("detalle")}
-            />
+            {peliculas.map((otros) => (
+                <MovieCard
+                    key={otros.id}
+                    titulo={otros.titulo}
+                    imagen={otros.imagen}
+                    onVerDetalle={() => verDetalle(otros)}
+                />
+            ))}
 
         </main>
     )

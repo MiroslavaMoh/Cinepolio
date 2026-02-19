@@ -1,6 +1,8 @@
 import MovieCard from "../components/MovieCard";
+import peliculas from "../data/comida.json"
 
-function Comida({cambiarVista}){
+
+function Comida({ verDetalle }){
     return(
         <main class="grid" style={{
             maxWidth:"1200px",
@@ -9,29 +11,14 @@ function Comida({cambiarVista}){
             gap:"16px",
             padding:"16px"
         }}>
-            <MovieCard
-                title="Palomitas"
-                image="src\img\palomitas.jpg"
-                onVerDetalle={() => cambiarVista("detalle")}
-            />
-
-            <MovieCard
-                title="Nachos"
-                image="src\img\palomitas.jpg"
-                onVerDetalle={() => cambiarVista("detalle")}
-            />
-
-            <MovieCard
-                title="Refresco"
-                image="src\img\palomitas.jpg"
-                onVerDetalle={() => cambiarVista("detalle")}
-            />
-
-            <MovieCard
-                title="Camarones a la siciliana"
-                image="src\img\palomitas.jpg"
-                onVerDetalle={() => cambiarVista("detalle")}
-            />
+            {peliculas.map((comida) => (
+                <MovieCard
+                    key={comida.id}
+                    titulo={comida.titulo}
+                    imagen={comida.imagen}
+                    onVerDetalle={() => verDetalle(comida)}
+                />
+            ))}
 
         </main>
     )

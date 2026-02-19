@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import './App.css'
 
-//Componentes nuevos, se deben importar uno por uno
+//Componentes
 import Header from './components/Header'
+
+//Páginas importadas
 import Home from './pages/Home'
 import Cartelera from './pages/Cartelera'
 import Detalle from './pages/Details'
@@ -10,19 +12,40 @@ import Comida from './pages/Food'
 import Otros from './pages/Other'
 
 function App() {
-  const [vistaActual, setVistaActual] = useState("home")
+  const [vistaActual, setVistaActual] = useState("home") //default
 
-  return(
+  const [itemSeleccionado, setItemSeleccionado] = useState(null) //guarda cualquier item
 
+  function verDetalle(item) { //Lo cambie para reusarlo con comida y otros sin confundirme :(
+    setItemSeleccionado(item)
+    setVistaActual("detalle")
+  }
 
-    <div style={{minHeight:"100vh"}}>
-      <Header cambiarVista={setVistaActual}/>
+  return( //vista
+    <div style={{ minHeight: "100vh" }}>
+      {/* Header controla navegación principal */}
+      <Header cambiarVista={setVistaActual} />
 
-      {vistaActual === "home" && <Home cambiarVista={setVistaActual}/>}
-      {vistaActual === "cartelera" && <Cartelera cambiarVista={setVistaActual}/>}
-      {vistaActual === "detalle" && <Detalle/>}
-      {vistaActual === "comida" && <Comida cambiarVista={setVistaActual}/>}
-      {vistaActual === "otros" && <Otros cambiarVista={setVistaActual}/>}
+      {vistaActual === "home" && (
+        <Home verDetalle={verDetalle} />
+      )}
+
+      {vistaActual === "cartelera" && (
+        <Cartelera verDetalle={verDetalle} />
+      )}
+
+      {vistaActual === "detalle" && (
+        <Detalle item={itemSeleccionado} />
+      )}
+
+      {vistaActual === "comida" && (
+        <Comida verDetalle={verDetalle} /> 
+      )}
+
+      {vistaActual === "otros" && (
+        <Otros verDetalle={verDetalle} />
+      )}
+      
     </div>
   )
 }

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "titulo": "Peluche de gatos",
+    "imagen": "https://images.unsplash.com/photo-1767522247688-a4d70b72fd0c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "descripcion": "Un adorable y suave peluche con temática felina, diseñado con materiales de alta calidad para ofrecer una textura acogedora y un aspecto tierno, ideal para coleccionistas de artículos de gatos."
+  },
+  {
+    "id": 2,
+    "titulo": "Set Finn y Jake (Hora de Aventura)",
+    "imagen": "https://images.unsplash.com/photo-1702561945759-10edff254d52?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "descripcion": "Paquete coleccionable que incluye figuras detalladas de los protagonistas de Hora de Aventura. Perfecto para recrear las travesías en la Tierra de Ooo o para decorar tu espacio de trabajo."
+  },
+  {
+    "id": 3,
+    "titulo": "Misky con lampara (brilla en la oscuridad)",
+    "imagen": "https://images.unsplash.com/photo-1756042439048-f7fe2c24cd01?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "descripcion": "Figura decorativa de Misky equipada con una lámpara LED de bajo consumo. Cuenta con un acabado fluorescente que permite que la pieza brille suavemente en la oscuridad, creando una atmósfera mágica."
+  },
+  {
+    "id": 4,
+    "titulo": "Colección de porcelana fantastica",
+    "imagen": "https://images.unsplash.com/photo-1613792720380-18fd9c384a52?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "descripcion": "Exclusivo set de piezas de porcelana fina con acabados detallados y motivos de fantasía. Cada pieza está pintada a mano, uniendo el arte tradicional con diseños inspirados en mundos imaginarios."
+  }
+]

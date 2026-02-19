@@ -1,7 +1,8 @@
 
 import MovieCard from "../components/MovieCard";
+import peliculas from "../data/pelicula.json"
 
-function Home({cambiarVista}){
+function Home({ verDetalle }){ //entre parentesis esta el valor a regresar
     return(
         <main class="grid" style={{
             maxWidth:"1200px",
@@ -11,31 +12,14 @@ function Home({cambiarVista}){
             padding:"16px"
         }}>
         
-        <MovieCard
-            title="Gatotastico: El musical"
-            image="src\img\hangcat.jpg"
-            onVerDetalle={() => cambiarVista("detalle")}
-        />
-
-        <MovieCard
-            title="El gato que dijo Miau"
-            image="src\img\hangcat.jpg"
-            onVerDetalle={() => cambiarVista("detalle")}
-        />
-
-        <MovieCard
-            title="Flow, pero aqui el gato no sufre"
-            image="src\img\hangcat.jpg"
-            onVerDetalle={() => cambiarVista("detalle")}
-        />
-
-        <MovieCard
-            title="Gatotastico: El musical 2 la venganza del Miau"
-            image="src\img\hangcat.jpg"
-            onVerDetalle={() => cambiarVista("detalle")}
-        />
-
-
+            {peliculas.map((pelicula) => (
+                <MovieCard
+                    key={pelicula.id}
+                    titulo={pelicula.titulo}
+                    imagen={pelicula.imagen}
+                    onVerDetalle={() => verDetalle(pelicula)}
+                />
+            ))}
         </main>
     )
 }
