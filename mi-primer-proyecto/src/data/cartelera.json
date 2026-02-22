@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "titulo": "La tumba de las luciérnagas",
+    "imagen": "https://m.media-amazon.com/images/M/MV5BMjdlOTNhMGItMDgxYy00OTYwLTkwMGYtNzAzMDRlNGEyODI1XkEyXkFqcGc@._V1_.jpg",
+    "descripcion": "Un desgarrador relato sobre la supervivencia de dos hermanos, Seita y Setsuko, en el Japón de la Segunda Guerra Mundial. Es una obra maestra emocional que explora las trágicas consecuencias del conflicto en la población civil."
+  },
+  {
+    "id": 2,
+    "titulo": "El castillo vagabundo",
+    "imagen": "https://i.pinimg.com/736x/50/f8/28/50f828534d857fa3e78ddf6b693a4e41.jpg",
+    "descripcion": "Sophie es una joven que cae bajo una maldición que la convierte en anciana. En su viaje para romper el hechizo, conoce al mago Howl y se adentra en su fantástico castillo ambulante, descubriendo el valor de la libertad y el amor."
+  },
+  {
+    "id": 3,
+    "titulo": "El viaje de Chihiro",
+    "imagen": "https://hips.hearstapps.com/hmg-prod/images/el-viaje-de-chihiro-1-1560703478.jpg",
+    "descripcion": "Chihiro es una niña que se pierde en un mundo mágico gobernado por dioses y espíritus. Para salvar a sus padres, debe trabajar en una casa de baños termales regentada por la bruja Yubaba en una aventura de crecimiento personal."
+  },
+  {
+    "id": 4,
+    "titulo": "Ponyo y el secreto de la sirenita",
+    "imagen": "https://m.media-amazon.com/images/I/71B0LWWxfrL._AC_UF894,1000_QL80_.jpg",
+    "descripcion": "Una tierna historia sobre una princesa pez dorado que desea convertirse en humana tras entablar amistad con Sosuke, un niño de cinco años. Una aventura visualmente deslumbrante que celebra la amistad y el respeto por el mar."
+  }
+]

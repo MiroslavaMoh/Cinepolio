@@ -3,6 +3,7 @@ import './App.css'
 
 //Componentes
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 //Páginas importadas
 import Home from './pages/Home'
@@ -10,6 +11,7 @@ import Cartelera from './pages/Cartelera'
 import Detalle from './pages/Details'
 import Comida from './pages/Food'
 import Otros from './pages/Other'
+import Sesion from './pages/Sesion'
 
 function App() {
   const [vistaActual, setVistaActual] = useState("home") //default
@@ -45,7 +47,13 @@ function App() {
       {vistaActual === "otros" && (
         <Otros verDetalle={verDetalle} />
       )}
+
+      {vistaActual === "sesion" && (
+        <Sesion />
+      )}
+
       
+      <Footer />
     </div>
   )
 }
