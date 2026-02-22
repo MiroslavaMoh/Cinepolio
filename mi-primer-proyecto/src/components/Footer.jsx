@@ -1,12 +1,12 @@
 function Footer() {
   return (
     <footer style={{
-        backgroundColor: "#DAE6FF",
+        backgroundColor: " #15274D",
         textAlign: "center",
         padding: "16px",
         marginTop: "24px",
         borderRadius: "12px",
-        color: "#15274D",
+        color: "#DAE6FF",
         fontWeight: "bold",
     }}>
       <p style={{ margin: 0 }}>© 2024 Cinepolio | Todos los derechos reservados | Aviso de privacidad</p>

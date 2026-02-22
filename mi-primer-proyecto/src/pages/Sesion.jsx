@@ -9,7 +9,7 @@ function Sesion() {
 
   // Evento submit
   function manejarSesion(e) {
-    e.preventDefault()
+    e.preventDefault() // PREVENT DEFAULTs
     if (nombre.trim() === "Miros" && contraseña.trim() === "1234") {
     setMensaje(
       `Gracias ${nombre}, has iniciado tu sesión!`
