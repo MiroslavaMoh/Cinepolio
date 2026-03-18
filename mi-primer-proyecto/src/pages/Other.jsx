@@ -1,26 +1,22 @@
-import MovieCard from "../components/MovieCard";
+import { useNavigate } from "react-router-dom"
+import MovieCard from "../components/MovieCard"
 import peliculas from "../data/otros.json"
 
-function Otros({ verDetalle }){
-    return(
-        <main class="grid" style={{
-            maxWidth:"1200px",
-            margin:"0 auto",
-            display:"grid",
-            gap:"16px",
-            padding:"16px"
-        }}>
-            {peliculas.map((otros) => (
-                <MovieCard
-                    key={otros.id}
-                    titulo={otros.titulo}
-                    imagen={otros.imagen}
-                    onVerDetalle={() => verDetalle(otros)}
-                />
-            ))}
+function Otros() {
+  const navigate = useNavigate()
 
-        </main>
-    )
-
+  return (
+    <main className="cards-grid">
+      {peliculas.map((otros) => (
+        <MovieCard
+          key={otros.id}
+          titulo={otros.titulo}
+          imagen={otros.imagen}
+          onVerDetalle={() => navigate(`/otros/${otros.id}`)}
+        />
+      ))}
+    </main>
+  )
 }
+
 export default Otros

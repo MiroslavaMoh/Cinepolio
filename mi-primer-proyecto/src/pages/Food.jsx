@@ -1,27 +1,22 @@
-import MovieCard from "../components/MovieCard";
+import { useNavigate } from "react-router-dom"
+import MovieCard from "../components/MovieCard"
 import peliculas from "../data/comida.json"
 
+function Comida() {
+  const navigate = useNavigate()
 
-function Comida({ verDetalle }){
-    return(
-        <main class="grid" style={{
-            maxWidth:"1200px",
-            margin:"0 auto",
-            display:"grid",
-            gap:"16px",
-            padding:"16px"
-        }}>
-            {peliculas.map((comida) => (
-                <MovieCard
-                    key={comida.id}
-                    titulo={comida.titulo}
-                    imagen={comida.imagen}
-                    onVerDetalle={() => verDetalle(comida)}
-                />
-            ))}
-
-        </main>
-    )
-
+  return (
+    <main className="cards-grid">
+      {peliculas.map((comida) => (
+        <MovieCard
+          key={comida.id}
+          titulo={comida.titulo}
+          imagen={comida.imagen}
+          onVerDetalle={() => navigate(`/comida/${comida.id}`)}
+        />
+      ))}
+    </main>
+  )
 }
+
 export default Comida

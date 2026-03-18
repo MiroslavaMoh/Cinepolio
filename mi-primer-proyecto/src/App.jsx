@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
 
 //Componentes
@@ -14,45 +14,24 @@ import Otros from './pages/Other'
 import Sesion from './pages/Sesion'
 
 function App() {
-  const [vistaActual, setVistaActual] = useState("home") //default
-
-  const [itemSeleccionado, setItemSeleccionado] = useState(null) //guarda cualquier item
-
-  function verDetalle(item) { //Lo cambie para reusarlo con comida y otros sin confundirme :(
-    setItemSeleccionado(item)
-    setVistaActual("detalle")
-  }
-
-  return( //vista
+  return (
     <div style={{ minHeight: "100vh" }}>
-      {/* Header controla navegación principal */}
-      <Header cambiarVista={setVistaActual} />
+      <Header />
 
-      {vistaActual === "home" && (
-        <Home verDetalle={verDetalle} />
-      )}
+      <Routes>
+        <Route path="/"               element={<Home />} />
+        <Route path="/cartelera"      element={<Cartelera />} />
+        <Route path="/alimentos"      element={<Comida />} />
+        <Route path="/coleccionables" element={<Otros />} />
+        <Route path="/sesion"         element={<Sesion />} />
 
-      {vistaActual === "cartelera" && (
-        <Cartelera verDetalle={verDetalle} />
-      )}
+        {/* Rutas dinámicas de detalle por categoría */}
+        <Route path="/pelicula/:id"   element={<Detalle fuente="pelicula" />} />
+        <Route path="/cartelera/:id"  element={<Detalle fuente="cartelera" />} />
+        <Route path="/comida/:id"     element={<Detalle fuente="comida" />} />
+        <Route path="/otros/:id"      element={<Detalle fuente="otros" />} />
+      </Routes>
 
-      {vistaActual === "detalle" && (
-        <Detalle item={itemSeleccionado} />
-      )}
-
-      {vistaActual === "comida" && (
-        <Comida verDetalle={verDetalle} /> 
-      )}
-
-      {vistaActual === "otros" && (
-        <Otros verDetalle={verDetalle} />
-      )}
-
-      {vistaActual === "sesion" && (
-        <Sesion />
-      )}
-
-      
       <Footer />
     </div>
   )

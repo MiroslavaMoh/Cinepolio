@@ -1,0 +1,121 @@
+/* Contenedor Principal con el degradado solicitado */
+.movie-carousel-container {
+  maxWidth: 100%;
+  margin: 0 auto;
+  padding: 40px 60px;
+  background: linear-gradient(30deg, #2e0249 0%, #001f3f 100%);
+  border-radius: 12px;
+  color: white;
+  font-family: sans-serif;
+}
+
+/* Estructura del Slide (Flexbox) */
+.movie-slide-content {
+  display: flex;
+  flex-direction: row; /* Imagen a la derecha, texto a la izquierda */
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 40px;
+  min-height: 400px;
+}
+
+.movie-slide__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 10px;
+}
+
+.movie-slide__title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.movie-slide__description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  opacity: 0.9;
+  max-width: 500px;
+}
+
+.movie-slide__button {
+  padding: 12px 24px;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.movie-slide__button:hover {
+  background-color: #e91e63;
+}
+
+.movie-slide__image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-slide__image {
+  max-width: 100%;
+  height: auto;
+  max-height: 350px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  object-fit: cover;
+}
+
+/* --- OVERRIDES DE SWIPER (Flechas blancas) --- */
+.movie-carousel-container .swiper-button-next,
+.movie-carousel-container .swiper-button-prev {
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px 25px;
+  border-radius: 8px;
+}
+
+.movie-carousel-container .swiper-pagination-bullet {
+  background: white !important;
+}
+
+.movie-carousel-container .swiper-pagination-bullet-active {
+  background: #ff4081 !important;
+}
+
+/* --- MEDIA QUERIES (Móvil) --- */
+@media (max-width: 768px) {
+  .movie-carousel-container {
+    padding: 20px 10px;
+  }
+
+  .movie-slide-content {
+    flex-direction: column-reverse; /* Texto arriba, imagen abajo */
+    padding: 10px;
+    min-height: auto;
+  }
+
+  .movie-slide__text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .movie-slide__title {
+    font-size: 1.5rem;
+  }
+
+  .movie-slide__image {
+    max-height: 250px;
+  }
+}

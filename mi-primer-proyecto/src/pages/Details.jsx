@@ -1,15 +1,23 @@
 import { useState } from "react"
+import { useParams } from "react-router-dom"
 import "./Details.css"
 
-// Vista de detalle de una película
-function Detalles({ item }) {
+import peliculas  from "../data/pelicula.json"
+import cartelera  from "../data/cartelera.json"
+import comida     from "../data/comida.json"
+import otros      from "../data/otros.json"
 
-  // Estados para el formulario
+// Mapa de fuente → datos
+const fuentes = { pelicula: peliculas, cartelera, comida, otros }
+
+function Detalles({ fuente }) {
+  const { id } = useParams()
+  const item = fuentes[fuente]?.find(i => i.id === parseInt(id))
+
   const [nombre, setNombre] = useState("")
   const [cantidadBoletos, setCantidadBoletos] = useState(1)
   const [mensaje, setMensaje] = useState("")
 
-  // En el caso que no se seleccione ningún item
   if (!item) {
     return (
       <main style={{ padding: "24px", textAlign: "center" }}>
@@ -18,15 +26,9 @@ function Detalles({ item }) {
     )
   }
 
-  // Evento submit/enviar
-  function manejarCompra(e) { //evento
+  function manejarCompra(e) {
     e.preventDefault()
-
-    setMensaje( //estado
-      `Gracias ${nombre}, compraste ${cantidadBoletos} boleto(s) para ${item.titulo}`
-    )
-
-    // Opcional: limpiar formulario
+    setMensaje(`Gracias ${nombre}, compraste ${cantidadBoletos} boleto(s) para ${item.titulo}`)
     setNombre("")
     setCantidadBoletos(1)
   }
@@ -36,17 +38,14 @@ function Detalles({ item }) {
       <h2>{item.titulo}</h2>
 
       <div className="details-grid">
-       {/* Columna 1 */}
         <div>
           <img
             src={item.imagen}
             alt={item.titulo}
             className="details-imagen"
           />
-          
         </div>
 
-        {/* Columna 2 */}
         <div className="details-formulario">
           <p>{item.descripcion}</p>
           <form onSubmit={manejarCompra}>
@@ -77,9 +76,7 @@ function Detalles({ item }) {
             <p className="details-mensaje">{mensaje}</p>
           )}
         </div>
-
       </div>
-    
     </main>
   )
 }

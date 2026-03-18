@@ -1,35 +1,33 @@
-import { useState, useEffect } from "react";
-import MovieCard from "../components/MovieCard";
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+import MovieCard from "../components/MovieCard"
+import MovieCarousel from "../components/MovieCarousel"
 import peliculas from "../data/cartelera.json"
 
-function Cartelera({ verDetalle }){ //entre parentesis esta el valor a regresar
+function Cartelera() {
+  const navigate = useNavigate()
+  const [listaItems, setListaItems] = useState([])
 
-    const [listaItems, setListaItems] = useState([]); //Variable almacena las peliculas
-        useEffect(() => {
-        setListaItems(peliculas);
-        console.log("Ya se cargaron las cartelera.json");
-    }, []);
+  useEffect(() => {
+    setListaItems(peliculas)
+  }, [])
 
-    return(
-        <main class="grid" style={{
-            maxWidth:"1200px",
-            margin:"0 auto",
-            display:"grid",
-            gap:"16px",
-            padding:"16px"
-        }}>
+  return (
+    <>
+      <MovieCarousel movies={listaItems} />
 
-           {listaItems.map((cartelera) => (
-                <MovieCard
-                    key={cartelera.id}
-                    titulo={cartelera.titulo}
-                    imagen={cartelera.imagen}
-                    onVerDetalle={() => verDetalle(cartelera)}
-                />
-            ))}
-
-        </main>
-    )
-
+      <main className="cards-grid">
+        {listaItems.map((cartelera) => (
+          <MovieCard
+            key={cartelera.id}
+            titulo={cartelera.titulo}
+            imagen={cartelera.imagen}
+            onVerDetalle={() => navigate(`/cartelera/${cartelera.id}`)}
+          />
+        ))}
+      </main>
+    </>
+  )
 }
+
 export default Cartelera

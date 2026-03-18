@@ -1,35 +1,32 @@
-
-import MovieCard from "../components/MovieCard";
+import { useState, useEffect } from "react"
+import { useNavigate } from 'react-router-dom'
+import MovieCard from "../components/MovieCard"
 import peliculas from "../data/pelicula.json"
-import { useState, useEffect } from "react";
 
-function Home({ verDetalle }){ //entre parentesis esta el valor a regresar
+function Home() {
+  const navigate = useNavigate()
+  const [listaPeliculas, setListaPeliculas] = useState([])
 
-const [listaPeliculas, setListaPeliculas] = useState([]); //Estado limpio
-    useEffect(() => { //Observer si cargó el json
-    setListaPeliculas(peliculas); //Estado se llena con el json
-    console.log("Ya se cargaron las películas.json");
-  }, []);
+  useEffect(() => {
+    setListaPeliculas(peliculas)
+  }, [])
 
-    return(
-        <main class="grid" style={{
-            maxWidth:"1200px",
-            margin:"0 auto",
-            display:"grid",
-            gap:"16px",
-            padding:"16px"
-        }}>
+  function irADetalle(id) {
+    navigate(`/pelicula/${id}`)
+  }
 
-            {listaPeliculas.map((pelicula) => (
-                <MovieCard
-                    key={pelicula.id}
-                    titulo={pelicula.titulo}
-                    imagen={pelicula.imagen}
-                    onVerDetalle={() => verDetalle(pelicula)}
-                />
-            ))}
-        </main>
-    )
+  return (
+    <main className="cards-grid">
+      {listaPeliculas.map((pelicula) => (
+        <MovieCard
+          key={pelicula.id}
+          titulo={pelicula.titulo}
+          imagen={pelicula.imagen}
+          onVerDetalle={() => irADetalle(pelicula.id)}
+        />
+      ))}
+    </main>
+  )
 }
 
 export default Home
