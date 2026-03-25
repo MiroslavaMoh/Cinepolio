@@ -9,7 +9,7 @@ function Sesion() {
 
   // Evento submit
   function manejarSesion(e) {
-    e.preventDefault() // PREVENT DEFAULTs
+    e.preventDefault()
     if (nombre.trim() === "Miros" && contraseña.trim() === "1234") {
     setMensaje(
       `Gracias ${nombre}, has iniciado tu sesión!`
@@ -24,10 +24,7 @@ function Sesion() {
   }
 
   return (
-    <main style={{ 
-        maxWidth: "1200px",
-        margin: "0 auto", 
-        padding: "24px" }}>
+    <main className="details-container">
       <h2>Iniciar Sesión</h2>
 
       <div className="details-formulario">

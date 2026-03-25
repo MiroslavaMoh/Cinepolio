@@ -1,49 +1,37 @@
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import './Header.css'
 
 function Header() {
-  const linkStyle = ({ isActive }) => ({
-    cursor: "pointer",
-    color: isActive ? "#3b6fe0" : "#15274D",
-    borderBottom: isActive ? "2px solid #3b6fe0" : "2px solid transparent",
-    paddingBottom: "4px",
-    textDecoration: "none",
-    fontWeight: "bold",
-    fontSize: "15px",
-  })
+  const [menuAbierto, setMenuAbierto] = useState(false)
+
+  const estiloLink = ({ isActive }) =>
+    `header__link${isActive ? ' header__link--activo' : ''}`
+
+  const cerrarMenu = () => setMenuAbierto(false)
 
   return (
-    <header
-      style={{
-        width: "100%",
-        boxSizing: "border-box",
-        backgroundColor: "#DAE6FF",
-        margin: "0px",
-        borderRadius: "12px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        paddingTop: "20px",
-      }}>
+    <header className="header">
+      <div className="header__barra">
+        <h1 className="header__titulo">Cinepolio</h1>
+        {/* Botón de hamburguesa para dispositivos móviles */}
+        <button
+          className={`header__hamburguesa${menuAbierto ? ' header__hamburguesa--abierto' : ''}`}
+          onClick={() => setMenuAbierto(!menuAbierto)}
+          aria-label="Abrir menú"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
 
-      <h1 style={{ margin: 0 }}>Cinepolio</h1>
-
-      <nav
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "24px",
-          paddingTop: "10px",
-          paddingBottom: "10px",
-          paddingLeft: "20px",
-          paddingRight: "20px",
-        }}>
-
-        <NavLink to="/" style={linkStyle} end>Inicio</NavLink>
-        <NavLink to="/cartelera" style={linkStyle}>Cartelera</NavLink>
-        <NavLink to="/alimentos" style={linkStyle}>Alimentos</NavLink>
-        <NavLink to="/coleccionables" style={linkStyle}>Coleccionables</NavLink>
-        <NavLink to="/sesion" style={linkStyle}>Iniciar Sesión</NavLink>
-
+      <nav className={`header__nav${menuAbierto ? ' header__nav--visible' : ''}`}>
+        <NavLink to="/" className={estiloLink} end onClick={cerrarMenu}>Inicio</NavLink>
+        <NavLink to="/cartelera" className={estiloLink} onClick={cerrarMenu}>Cartelera</NavLink>
+        <NavLink to="/alimentos" className={estiloLink} onClick={cerrarMenu}>Alimentos</NavLink>
+        <NavLink to="/coleccionables" className={estiloLink} onClick={cerrarMenu}>Coleccionables</NavLink>
+        <NavLink to="/sesion" className={estiloLink} onClick={cerrarMenu}>Iniciar Sesión</NavLink>
       </nav>
     </header>
   )

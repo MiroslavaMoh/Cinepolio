@@ -1,31 +1,16 @@
-import Button from "./Button"
+import Button from './Button'
+import './MovieCard.css'
 
 function MovieCard({ titulo, imagen, onVerDetalle }) {
-return (
-    <div style={{
-        padding: "8px",
-        overflow:"hidden",
-        boxShadow: "0 3px 12px rgba(218,203,255,0.5)",
-        borderRadius: "15px"
-    }}>
-
-        <img src={imagen} alt={titulo}
-        style={{
-            width: "100%",
-            height: "300px",
-            objectFit:"cover",
-            borderRadius:"5px"
-        }}/>
-        <div style={{
-            padding:"17px",
-            textAlign:"center"
-        }}>
-        
+  return (
+    <div className="movie-card">
+      <img src={imagen} alt={titulo} className="movie-card__imagen" />
+      <div className="movie-card__info">
         <h3>{titulo}</h3>
-        <Button text="Ver detalles" onClick={onVerDetalle}/>
-        </div>
+        <Button text="Ver detalles" onClick={onVerDetalle} />
+      </div>
     </div>
-)
+  )
 }
 
 export default MovieCard

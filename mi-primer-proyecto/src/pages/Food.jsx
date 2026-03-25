@@ -1,13 +1,13 @@
-import { useNavigate } from "react-router-dom"
-import MovieCard from "../components/MovieCard"
-import peliculas from "../data/comida.json"
+import { useNavigate } from 'react-router-dom'
+import MovieCard from '../components/MovieCard'
+import comidas from '../data/comida.json'
 
 function Comida() {
   const navigate = useNavigate()
 
   return (
     <main className="cards-grid">
-      {peliculas.map((comida) => (
+      {comidas.map((comida) => (
         <MovieCard
           key={comida.id}
           titulo={comida.titulo}

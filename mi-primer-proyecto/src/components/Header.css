@@ -1,0 +1,111 @@
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #DAE6FF;
+  margin: 0;
+  border-radius: 12px;
+}
+
+/* Fila superior: título + botón hamburguesa */
+.header__barra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+}
+
+.header__titulo {
+  margin: 0;
+  text-align: center;
+}
+
+/* Navegación — escritorio */
+.header__nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 10px 20px;
+}
+
+.header__link {
+  cursor: pointer;
+  color: #15274D;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.header__link--activo {
+  color: #3b6fe0;
+  border-bottom: 2px solid #3b6fe0;
+}
+
+/* Botón hamburguesa — oculto en escritorio */
+.header__hamburguesa {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header__hamburguesa span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #15274D;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animación X al abrir */
+.header__hamburguesa--abierto span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+.header__hamburguesa--abierto span:nth-child(2) {
+  opacity: 0;
+}
+.header__hamburguesa--abierto span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* Responsivo — móvil */
+@media (max-width: 768px) {
+  .header__barra {
+    justify-content: space-between;
+  }
+
+  .header__hamburguesa {
+    display: flex;
+  }
+
+  .header__nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0 24px 16px;
+  }
+
+  .header__nav--visible {
+    display: flex;
+  }
+
+  .header__link {
+    padding: 12px 0;
+    border-bottom: none;
+    border-top: 1px solid rgba(21, 39, 77, 0.1);
+    width: 100%;
+  }
+
+  .header__link--activo {
+    border-bottom: none;
+    color: #3b6fe0;
+  }
+}

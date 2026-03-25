@@ -1,6 +1,6 @@
 /* Contenedor Principal con el degradado solicitado */
 .movie-carousel-container {
-  maxWidth: 100%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 40px 60px;
   background: linear-gradient(30deg, #2e0249 0%, #001f3f 100%);

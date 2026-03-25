@@ -1,18 +1,18 @@
-import { useNavigate } from "react-router-dom"
-import MovieCard from "../components/MovieCard"
-import peliculas from "../data/otros.json"
+import { useNavigate } from 'react-router-dom'
+import MovieCard from '../components/MovieCard'
+import coleccionables from '../data/otros.json'
 
 function Otros() {
   const navigate = useNavigate()
 
   return (
     <main className="cards-grid">
-      {peliculas.map((otros) => (
+      {coleccionables.map((item) => (
         <MovieCard
-          key={otros.id}
-          titulo={otros.titulo}
-          imagen={otros.imagen}
-          onVerDetalle={() => navigate(`/otros/${otros.id}`)}
+          key={item.id}
+          titulo={item.titulo}
+          imagen={item.imagen}
+          onVerDetalle={() => navigate(`/otros/${item.id}`)}
         />
       ))}
     </main>
